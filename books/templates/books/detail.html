@@ -1,0 +1,21 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+<div class="book-card">
+    <h2>{{ book.title }}</h2>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+    <p><strong>Publication Date:</strong> {{ book.publication_date }}</p>
+    <p><strong>Genre:</strong> {{ book.genre }}</p>
+    <p><strong>Description:</strong> {{ book.description|linebreaks }}</p>
+    
+    <div style="margin-top: 1rem;">
+        <a href="{% url 'book_update' book.pk %}" class="btn">Edit</a>
+        <a href="{% url 'book_delete' book.pk %}" class="btn btn-danger">Delete</a>
+        {% if book.file %}
+            <a href="{% url 'download_book' book.pk %}" class="btn btn-success">Download File</a>
+        {% endif %}
+        <a href="{% url 'book_list' %}" class="btn">Back to List</a>
+    </div>
+</div>
+{% endblock %}

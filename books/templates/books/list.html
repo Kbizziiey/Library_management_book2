@@ -1,0 +1,26 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+    <h2>Book Collection</h2>
+    
+    {% for book in books %}
+    <div class="book-card">
+        <h3>{{ book.title }}</h3>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+        <p><strong>Genre:</strong> {{ book.genre }}</p>
+        
+        <div style="margin-top: 1rem;">
+            <a href="{% url 'book_detail' book.pk %}" class="btn">View Details</a>
+            <a href="{% url 'book_update' book.pk %}" class="btn">Edit</a>
+            {% if book.file %}
+                <a href="{% url 'download_book' book.pk %}" class="btn btn-success">Download</a>
+            {% endif %}
+        </div>
+    </div>
+    {% empty %}
+    <div class="book-card">
+        <p>No books available. <a href="{% url 'book_create' %}">Add the first book!</a></p>
+    </div>
+    {% endfor %}
+{% endblock %}
