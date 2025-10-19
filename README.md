@@ -28,7 +28,10 @@ Working Django project connected to MySQL
 
 Successfully migrated models
 
-Admin interface accessible at /admin
+Admin interface accessible at /admin'
+
+
+
 
 Week 2 – API Development (CRUD Operations)
 
@@ -53,6 +56,9 @@ Functional /api/books/ and /api/users/ endpoints
 Validation for unique ISBNs
 
 Browsable DRF API interface working
+
+
+
 
 Week 3 – Transactions & Authentication
 
@@ -81,6 +87,9 @@ Secure endpoints with JWT
 Transaction logs showing who borrowed and returned books
 
 Error handling for unavailable books
+
+
+
 
 Week 4 – Testing, Documentation & Deployment Prep
 
